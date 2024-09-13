@@ -22,9 +22,10 @@ def findCount(n, arr, num, diff):
     for i in range(n):
         if(abs(arr[i]-num)<=diff):
             count+=1
-    if count:
+    if count>0:
         return count
-    return 0
+    else:
+        return 0
 n=int(input())
 arr=[]
 for i in range(n):
