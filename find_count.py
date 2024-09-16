@@ -22,7 +22,7 @@ def findCount(n, arr, num, diff):
     for i in range(n):
         if(abs(arr[i]-num)<=diff):
             count+=1
-    if count>0:
+    if count>=0:
         return count
     else:
         return 0
