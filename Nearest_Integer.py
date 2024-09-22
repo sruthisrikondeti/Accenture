@@ -12,3 +12,20 @@ Input 2: Num=26
 M=3 
 Output 2: 27
 '''
+def nearest_integer(num,m):
+    narr=[]
+    for i in range(num//2,num+m):
+        if(i%m==0):
+            narr.append(i)
+    n=len(narr)
+    res=0
+    if((narr[n-1]-num)<(num-narr[n-2])):
+        res=narr[n-1]
+    elif((narr[n-1]-num)==(num-narr[n-2])):
+        res=max(narr[n-1],narr[n-2]) 
+    else:
+        res=narr[n-2]
+    return res
+num =int(input())
+m =int(input())
+print(nearest_integer(num,m))
