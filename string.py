@@ -21,4 +21,10 @@ else:
     print("The  character", ch, "is not an Alphabet")
 '''Output
 The  character z is an Alphabet'''
-#Q3
+#Q3 palindrome or not
+s1=input()
+s2=s1[::-1]
+if(s1==s2):
+    print("palindrome")
+else:
+    print("not palindrome")
