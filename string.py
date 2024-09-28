@@ -28,3 +28,13 @@ if(s1==s2):
     print("palindrome")
 else:
     print("not palindrome")
+#Q4 change order of words
+def reverse_words(input_str):
+    words = input_str.split()
+    reversed_words = words[::-1]
+    reversed_str = ' '.join(reversed_words)
+    return reversed_str
+
+input_str =input()
+result = reverse_words(input_str)
+print(result)
