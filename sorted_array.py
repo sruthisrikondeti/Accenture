@@ -13,22 +13,25 @@ Sorted odd array : 4 7
 
 7'''
 
+def sortarray(arr,n):
+    even=[]
+    odd=[]
+    for i in range(n):
+        if i%2==0:
+            even.append(arr[i])
+        else:
+            odd.append(arr[i])
+    even.sort()
+    odd.sort()
+    sum=even[-2]+odd[-2]
+    even_str=' '.join(map(str,even))
+    odd_str=' '.join(map(str,odd))
+    print("even sorted array:",even_str)
+    print("odd sorted array:",odd_str)
+    return sum
 n=int(input("enter the size of array:"))
 arr=[]
 for i in range (n):
     x=int(input("enter element at {} index:".format(i)))
     arr.append(x)
-even=[]
-odd=[]
-for i in arr:
-    if (i%2==0):
-        even.append(i)
-    else:
-        odd.append(i)
-even.sort()
-odd.sort()
-even_str = ' '.join(map(str, even))
-odd_str = ' '.join(map(str, odd))
-
-print("Sorted even array :",even_str)
-print("Sorted odd array :",odd_str)
+print(sortarray(arr,n))
