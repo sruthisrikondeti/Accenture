@@ -35,26 +35,28 @@ Sample Output
 
 8
 '''
-
-def even_odd():
-    arr=[]
+def even_odd(arr,n):
     even=[]
     odd=[]
-    n=int(input())
     if (n==0 or n<=3):
         return 0
-    for i in range (n):
-        x=int(input())
-        arr.append(x)
     
     for i in range (n):
-        if(i>0):
-            if(i%2==0):
-                even.append(i)
-            else:
-                odd.append(i)
+        if(i%2==0):
+            even.append(arr[i])
+        else:
+            odd.append(arr[i])
     even.sort()
     odd.sort()
-    print(even[len(even)-2]+odd[len(odd)-2])
-    
-even_odd()
+    if len(even) < 2 or len(odd) < 2:
+        return 0
+    largest=even[-2]
+    smallest=odd[1]
+    sum=largest+smallest
+    return sum
+n=int(input())
+arr=[]
+for i in range (n):
+        x=int(input())
+        arr.append(x)
+print(even_odd(arr,n))
